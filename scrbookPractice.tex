@@ -1,0 +1,93 @@
+\documentclass[11pt,twoside=semi,numbers=noenddot]{scrbook}
+\usepackage[cp1250]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage[textsize=scriptsize,shadow]{todonotes}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage[normalem]{ulem}
+\usepackage{stmaryrd}
+\usepackage{wasysym}
+\usepackage{multirow}
+\usepackage{prerex}
+\usepackage{hyperref}
+
+% Add package 'cleverref' and check its documentation, should def be useful
+
+\usepackage{listings} %%crucial to allow snippets of LaTeX code to be shown 
+\lstset{
+	language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    identifierstyle=\color{magenta},
+}
+\hypersetup{ %%colors of links
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  urlcolor=blue
+}
+\usepackage{lipsum}
+\usepackage[nameinlink]{cleveref}
+\usepackage[left=1in,right=1in,bottom=1.5in]{geometry}
+\usepackage[headsepline]{scrlayer-scrpage}
+%%\addtolength{\textheight}{3.14cm}
+
+
+%\setlength{\footskip}{1.3in}
+%\setlength{\headsep}{0pt}
+
+
+\ifoot{}
+\ofoot{}
+\cfoot{\pagemark}
+
+
+\ihead{\emph{\textsc{\LaTeX\ and Asymptote Manual for Beginners}}}
+\ohead{\leftmark}
+
+\renewcommand*{\chapterpagestyle}{plain.scrheadings}
+
+\input{shortcuts}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{11pt}
+
+\usepackage{typearea}
+\title{\LaTeX \ and Asymptote Manual for Beginners}
+\subtitle{A simple and straightforward tool to learn mathematical typesetting}
+\author{Aman Jain}
+\date{April 2022}
+\begin{document}
+\cleardoublepage
+\addtocontents{toc}{\protect\thispagestyle{empty}} % no page numbers for TOC
+%\chapterpagestyle{headings}
+
+%\clearpairofpagestyles
+%\ihead{}
+%\ohead{}
+%\cfoot[\pagemark]{}
+
+\flushbottom % even out the bottoms
+\frontmatter % stuff before body of text
+
+\dedication{``Awesome quote'' \\ -someone }
+\maketitle
+\newcounter{temppage}
+\setcounter{chapter}{-1} % start with prelims as ch 0
+\setcounter{temppage}{\value{page}}
+\mainmatter
+\setcounter{page}{\value{temppage}}
+\tableofcontents
+
+%\thispagestyle{headings}
+\input{0.preliminaries}
+\input{1.creatingdocument}
+
+\end{document}
+

@@ -1,0 +1,22 @@
+\chapter{Creating a \LaTeX\ Document}
+%\lipsum
+For simple purposes, \LaTeX\ can often just be used to create small mathematical images to be added to other documents. After all, the greatest aspect of \LaTeX\ is its ability to render math. However, the true purpose of \LaTeX\ is to typeset entire documents.
+
+\section{A Basic Document in \LaTeX}
+The basic, bare structure of every document is 
+\begin{lstlisting}
+	\documentclass{<class>}
+	\begin{document}
+		<text and commands>
+	\end{document}
+\end{lstlisting}
+For now, it is not essential to understand each of these commands to the fullest; they will be addressed in future chapters. The important thing to understand is, every \LaTeX\ document contains an \emph{preamble} and a \emph{body}. The preamble is everything that comes before the \verb|\begin{document}|, and the body is the rest of the document, contained between the \verb|\begin{document}| and \verb|\end{document}|.
+
+\section{The Preamble}
+Every \LaTeX\ document must have a preamble. At the very least, the preamble always has to specify the document \emph{class}, using the command \verb|\documentclass{<class>}|. In \LaTeX, a class defines the structure and formatting of a document. Some of the more common classes are \ttt{article}, \ttt{report}, and \ttt{book}, but there are dozens more with their own uses. I won't be going over any individual classes in this manual, but each of these will have a documentation at \href{https://ctan.org/}{CTAN (Comprehensive \TeX\ Archive Network)}. The material found here can sometimes be on the complicated side though, but the internet will always be helpful as well; simple searches should be enough to find answers to most questions. 
+
+Most projects will need more than just a class in the preamble. The preamble is where you can take the class (say, article) and essentially customize it to fit your needs. In the preamble you can choose headers and footers, define your title, add custom formatting, and more. (The specific ways to do this varies from class to class; again, online resources will have ample help.) One of the most important components of th preamble is the addition of \emph{packages}, which are added using the \verb|\usepackage{}| command. Packages are somewhat similar to classes, but they are more specific to certain parts of your document, whereas classes tend to provide an outline for how the entire document will feel and function. For instance, asymptote is a package used to create geometry diagrams (more on that later, of course). Some of the most prominent packages are \ttt{amsmath} and \ttt{amssymb}, \ttt{graphicx}, \ttt{xcolor}, \ttt{geometry}, \ttt{fancyhdr}, and more. Note that this list is nowhere near complete; there are hundreds of \LaTeX\ packages, which are all exceedingly useful in certain scenarios. 
+
+Putting it all together, let's say you wanted to write a (rather short) article in which your 
+
+\section{The Body}
