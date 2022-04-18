@@ -16,21 +16,26 @@
 \usepackage{multirow}
 \usepackage{prerex}
 \usepackage{hyperref}
+\input{shortcuts}
 
 % Add package 'cleverref' and check its documentation, should def be useful
-
+\addtokomafont{chapter}{\color{chaptercolor}}
+\addtokomafont{section}{\color{sectioncolor}}
 \usepackage{listings} %%crucial to allow snippets of LaTeX code to be shown 
 \lstset{
 	language=[LaTeX]TeX,
     breaklines=true,
     basicstyle=\ttfamily,
-    keywordstyle=\color{blue},
+    keywordstyle=\color{lstcommand},
     commentstyle=\color{gray},
-    identifierstyle=\color{magenta},
+    identifierstyle=\color{lsttext},
+    aboveskip=5.5pt,
+    belowskip=-5.5pt,
+    tabsize=2
 }
 \hypersetup{ %%colors of links
   colorlinks=true,
-  linkcolor=blue!50!red,
+  linkcolor=chaptercolor,
   urlcolor=blue
 }
 \usepackage{lipsum}
@@ -44,9 +49,9 @@
 %\setlength{\headsep}{0pt}
 
 
-\ifoot{}
-\ofoot{}
-\cfoot{\pagemark}
+\ifoot[]{}
+\ofoot[]{}
+\cfoot[\pagemark]{\pagemark} % optional argument [] makes page numbers centered on 1st pg of chapters as well
 
 
 \ihead{\emph{\textsc{\LaTeX\ and Asymptote Manual for Beginners}}}
@@ -54,7 +59,7 @@
 
 \renewcommand*{\chapterpagestyle}{plain.scrheadings}
 
-\input{shortcuts}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{11pt}
 

@@ -17,6 +17,29 @@ Every \LaTeX\ document must have a preamble. At the very least, the preamble alw
 
 Most projects will need more than just a class in the preamble. The preamble is where you can take the class (say, article) and essentially customize it to fit your needs. In the preamble you can choose headers and footers, define your title, add custom formatting, and more. (The specific ways to do this varies from class to class; again, online resources will have ample help.) One of the most important components of th preamble is the addition of \emph{packages}, which are added using the \verb|\usepackage{}| command. Packages are somewhat similar to classes, but they are more specific to certain parts of your document, whereas classes tend to provide an outline for how the entire document will feel and function. For instance, asymptote is a package used to create geometry diagrams (more on that later, of course). Some of the most prominent packages are \ttt{amsmath} and \ttt{amssymb}, \ttt{graphicx}, \ttt{xcolor}, \ttt{geometry}, \ttt{fancyhdr}, and more. Note that this list is nowhere near complete; there are hundreds of \LaTeX\ packages, which are all exceedingly useful in certain scenarios. 
 
-Putting it all together, let's say you wanted to write a (rather short) article in which your 
+Putting it all together, let's say you wanted to write an article using the packages \ttt{amsmath} and \ttt{geometry}. This could look something like this:
+\begin{lstlisting}
+	\documentclass{article}
+	\usepackage{amsmath}
+	\usepackage{geometry}
+	\begin{document}
+		Here is your article!
+	\end{document}
+\end{lstlisting}
+Again, the preamble will vary based on the class of your document, but the method of importing packages is always the same. 
 
 \section{The Body}
+The body is the majority of your document, and it dictates what content is actually in the document. When \LaTeX\ is compiled, everything in the body is interpreted and outputted onto the \ttt{.pdf} file. The body is contained entire within the \emph{document environment}, which is defined by the \verb|\begin{document}| and \verb|\end{document}| commands. Any document will have a body consisting of many environments, all of which are parts of the document environment. Many environments are also defined by \verb|\begin{environment}| and \verb|\end{environment}| commands, but there are some which are defined more succintly depending on the class and packages used. 
+
+Continuing the previous example, if you wanted to add an environment called \emph{section} to your article and add some text to this section, it could look like so:
+\begin{lstlisting}
+	\documentclass{article}
+	\usepackage{amsmath}
+	\usepackage{geometry}
+	\begin{document}
+		\begin{section}{This is the title of my section}
+			Here is the text in this section.
+		\end{section}
+	\end{document}
+\end{lstlisting}
+Notice that the \verb|\begin{section}| command has an additional parameter. Many environments accept one or more additional parameters to help define what the structure will look like. Environments tend to depend on packages and classes, but the documentation for any class or package will outline how to use every environment. 
